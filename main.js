@@ -29,7 +29,20 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
+function oddOrEven(num){
+    let numRandom = getRndInteger(1,5)
+    if((num + numRandom) % 2 === 0){
+        console.log(`${num} + ${numRandom} è pari`);
+    }else{
+        console.log(`${num} + ${numRandom} è dispari`);
+    }
+}
 
+
+//W3S Random number generator
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
 
 
@@ -38,3 +51,6 @@ Dichiariamo chi ha vinto.
 
 let userWord = prompt("Inserire una parola");
 isPalindroma(userWord);
+
+let userNum = Number(prompt("Inserire un numero compreso tra 1 e 5"));
+oddOrEven(userNum);
