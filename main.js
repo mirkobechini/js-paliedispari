@@ -13,6 +13,9 @@ function isPalindroma(word){
     }
     console.log(`La parola ${word} è palindroma`);
     return true;
+
+    //return word.reverse()===word
+
 }
 
 
