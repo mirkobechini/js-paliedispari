@@ -35,9 +35,8 @@ Dichiariamo chi ha vinto.
 function isEven(num) {
     if (num % 2 === 0) {
         return "pari"
-    } else {
-        return "dispari"
     }
+    return "dispari"
 }
 
 //W3S Random number generator
