@@ -4,9 +4,9 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 */
 
-function isPalindroma(word){
-    for( let i = 0; i < word.length/2; i++){
-        if(word[i] != word[word.length-1-i]){
+function isPalindroma(word) {
+    for (let i = 0; i < word.length / 2; i++) {
+        if (word[i] != word[word.length - 1 - i]) {
             console.log(`La parola ${word} non è palindroma`);
             return false;
         }
@@ -32,28 +32,38 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
-function oddOrEven(num){
-    let numRandom = getRndInteger(1,5)
-    if((num + numRandom) % 2 === 0){
-        console.log(`${num} + ${numRandom} è pari`);
-    }else{
-        console.log(`${num} + ${numRandom} è dispari`);
+function isEven(num) {
+    if (num % 2 === 0) {
+        return "pari"
+    } else {
+        return "dispari"
     }
 }
 
-
 //W3S Random number generator
 function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
 
 
 //Main
 
-let userWord = prompt("Inserire una parola");
+//Palindroma
+const userWord = prompt("Inserire una parola");
 isPalindroma(userWord);
 
-let userNum = Number(prompt("Inserire un numero compreso tra 1 e 5"));
-oddOrEven(userNum);
+
+//Pari e dispari
+const userChoice = prompt("Scegli pari o dispari").toLowerCase()
+const userNum = Number(prompt("Inserire un numero compreso tra 1 e 5"));
+
+const numRandom = getRndInteger(1, 5)
+const sum = userNum + numRandom
+
+if (isEven(sum) === userChoice) {
+    console.log("L'utente ha vinto");
+
+} else {
+    console.log("Il PC ha vinto");
+
+}
